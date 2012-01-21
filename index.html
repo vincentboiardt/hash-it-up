@@ -3,14 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
-<link rel="stylesheet" href="sp://import/css/adam.css">
+<link rel="stylesheet" href="sp://import/css/eve.css">
 <link rel="stylesheet" href="sp://import/css/api.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Bree+Serif">
 <link rel="stylesheet" href="css/twitter.css">
 </head>
 
 <body>
+<h1 id="logo">Hash It Up</h1>
+
 <div id="wrap">
-	<h1 id="logo">Twitter</h1>
+	
 	<form action="http://search.twitter.com/search.json" id="form" class="clear">
 		<div class="col-1">
 			<input type="search" placeholder="#protothon" id="term">
@@ -19,15 +22,20 @@
 			<input type="submit" value="Listen">
 		</div>
 	</form>
+	
+	<div id="now-playing"></div>
+	
 	<ul id="list"></ul>
 </div>
 <script>
 var sp = getSpotifyApi(1),
 	m = sp.require('sp://import/scripts/api/models'),
+	v = sp.require('sp://import/scripts/api/views'),
 	ui = sp.require('sp://import/scripts/ui');
 </script>
 <script src="js/libs/jquery-1.7.1.min.js"></script>
 <script src="js/libs/twitter-text.js"></script>
+<script src="js/helpers.js"></script>
 <script src="js/twitter.js"></script>
 <script src="js/tweet.js"></script>
 <script>

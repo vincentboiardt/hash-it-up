@@ -1,10 +1,10 @@
 {
 	"BundleType": "Application",
 	"AppIcon": {
-		"36x18": "tutorial.png"
+		"36x18": "icon.png"
 	},
 	"AppName": {
-		"en": "Spotwitdio"
+		"en": "Hash It Up"
 	},
 	"SupportedLanguages": [
 		"en"
@@ -12,6 +12,8 @@
 	"RequiredPermissions": [
 		"http://*.twimg.com",
 		"http://*.twitter.com",
-		"http://*.spotify.com"
+		"http://*.spotify.com",
+		"http://*.googleapis.com",
+		"http://*.googleusercontent.com"
 	]
 }

@@ -21,8 +21,8 @@ display: block;
 }
 
 #logo {
-	font: italic 36px/1 Georgia, "Times New Roman", Times, serif;
-	color: #eee;
+	font: 36px/1 'Bree Serif', serif, Arial, Helvetica, sans-serif;
+	color: #333;
 	text-align: center;
 	margin: 0 0 30px;
 }
@@ -98,10 +98,9 @@ display: block;
 	margin: 0 10px 0 0;
 }
 
-.tweet-data .name {
-	display: block;
-	font-size: 16px;
-	font-weight: bold;
+.tweet-data .date {
+	font-size: 10px;
+	color: #999;
 }
 
 .spotify-data {
@@ -110,10 +109,10 @@ display: block;
 	box-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
 }
 
-.spotify-data .image {
+.spotify-data .sp-player {
 	float: left;
-	width: 30px;
-	height: 30px;
+	width: 100px;
+	height: 100px;
 	margin: 0 10px 0 0;
 }
 
