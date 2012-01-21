@@ -33,6 +33,12 @@ var Twitter = {
 			if ( response.results.length ) {
 				Twitter.tweets = response.results;
 				Twitter.render();
+			} else {
+				$('#no-results').slideDown(200, function(){
+					setTimeout(function(){
+						$('#no-results').slideUp(1000);
+					}, 5000)
+				});
 			}
 		});
 	},
@@ -52,7 +58,6 @@ var Twitter = {
 		});
 	},
 	play: function() {
-		console.log(Twitter.playlist);
 		m.player.play(Twitter.playlist.tracks[0], Twitter.playlist);
 	}
 }
