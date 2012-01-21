@@ -21,10 +21,14 @@ display: block;
 }
 
 #logo {
+	background: url(../img/logo.png) no-repeat;
+	width: 282px;
+	height: 87px;
+	text-indent: -999em;
 	font: 36px/1 'Bree Serif', serif, Arial, Helvetica, sans-serif;
 	color: #333;
 	text-align: center;
-	margin: 0 0 30px;
+	margin: 0 auto 30px;
 }
 
 #form {
@@ -52,8 +56,9 @@ display: block;
 	height: 50px;
 	padding: 5px 5px 5px 20px;
 	background-position: 10px 18px;
+	border: 1px solid #bebab0;
 	border-radius: 5px;
-	border: none;
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1);
 	vertical-align: middle;
 	margin: 0;
 }
@@ -65,11 +70,11 @@ display: block;
 	height: 50px;
 	padding: 5px 15px;
 	background: #fff;
-	border: 1px solid #000;
-	background: #999;
+	border: 1px solid #71496b;
+	background: #9a468d;
 	cursor: pointer;
-	color: #000;
-	text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+	color: #fff;
+	text-shadow: -1px -1px 0px rgba(0,0,0,0.5);
 	border-radius: 5px;
 	vertical-align: middle;
 }
@@ -80,9 +85,10 @@ display: block;
 
 #list li {
 	color: #555;
-	background: #fff;
+	background: #fff url(../img/stripe.png);
+	border: 1px solid #bebab0;
 	border-radius: 10px;
-	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
 	padding: 10px;
 	margin: 0 0 10px;
 }
@@ -105,11 +111,13 @@ display: block;
 
 .spotify-data {
 	padding: 10px;
+	background: #fff;
 	border-radius: 10px;
 	box-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
 }
 
-.spotify-data .sp-player {
+.spotify-data .sp-player,
+.spotify-data .image {
 	float: left;
 	width: 100px;
 	height: 100px;
@@ -120,6 +128,7 @@ h1 {
 	font-size: 16px;
 	font-weight: bold;
 	color: #333;
+	margin: 0 0 5px;
 }
 
 h1 a {
@@ -129,6 +138,7 @@ h1 a {
 h2 {
 	font-size: 20px;
 	font-weight: bold;
+	margin: 0 0 5px;
 	color: #333;
 }
 

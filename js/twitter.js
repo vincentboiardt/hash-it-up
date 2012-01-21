@@ -1,8 +1,11 @@
 var Twitter = {
+	loaded: 0,
+	failed: 0,
+	autoStart: false,
 	init: function() {
 		Twitter.list = $('#list');
 		Twitter.term = 'protothon';
-		
+		Twitter.tracks = [];
 		Twitter.request();
 		
 		
@@ -11,13 +14,20 @@ var Twitter = {
 		$('#form').submit(function(e){
 			e.preventDefault();
 			
+			Twitter.autoStart = true;
 			Twitter.term = $('#term').val().replace('#', '');
-			Twitter.request();
+			
+			if ( Twitter.term.length > 0 )
+				Twitter.request();
 		});
 	},
 	request: function(){
-		if ( ! Twitter.playlist )
-			Twitter.playlist = new m.Playlist('#' + Twitter.term);
+		Twitter.loaded = 0;
+		Twitter.failed = 0;
+		Twitter.tracks = [];
+		
+		//if ( ! Twitter.playlist || ( Twitter.playlist || Twitter.playlist.name != '#' + Twitter.term ) )
+			Twitter.playlist = new m.Playlist();
 		
 		$.getJSON( 'http://search.twitter.com/search.json', { q: Twitter.term + '+open.spotify.com', include_entities: 1, callback: '?' }, function(response){
 			if ( response.results.length ) {
@@ -35,9 +45,14 @@ var Twitter = {
 			});
 		}
 		
-		$(Twitter.tweets).each(function(){
+		$(Twitter.tweets).each(function(i, obj){
 			var tweet = new Tweet(this);
 			tweet.appendTo(Twitter.list);
+			Twitter.tracks.push(tweet);
 		});
+	},
+	play: function() {
+		console.log(Twitter.playlist);
+		m.player.play(Twitter.playlist.tracks[0], Twitter.playlist);
 	}
 }
