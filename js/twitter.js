@@ -16,7 +16,8 @@ var Twitter = {
 		});
 	},
 	request: function(){
-		Twitter.playlist = new m.Playlist('#' + Twitter.term);
+		if ( ! Twitter.playlist )
+			Twitter.playlist = new m.Playlist('#' + Twitter.term);
 		
 		$.getJSON( 'http://search.twitter.com/search.json', { q: Twitter.term + '+open.spotify.com', include_entities: 1, callback: '?' }, function(response){
 			if ( response.results.length ) {
@@ -27,7 +28,12 @@ var Twitter = {
 	},
 	render: function(){
 		Twitter.list.empty();
-		console.log(Twitter.tweets);
+		
+		if ( Twitter.playlist ) {
+			$(Twitter.playlist.tracks).each(function(){
+				Twitter.playlist.remove(this);
+			});
+		}
 		
 		$(Twitter.tweets).each(function(){
 			var tweet = new Tweet(this);
