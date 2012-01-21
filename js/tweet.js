@@ -16,7 +16,7 @@ Tweet.prototype = {
 		$( this.tweet.entities.urls ).each(function(){
 			text = text.replace(this.url, this.expanded_url);
 			
-			var spotify = /(track|artist|playlist|album)\/(.*)/.exec(this.expanded_url);
+			var spotify = /(track)\/(.*)/.exec(this.expanded_url);
 			if ( spotify && spotify.length === 3 ) {
 				obj.spotifyObjects.push({
 					type: spotify[1],
@@ -72,6 +72,8 @@ Tweet.prototype = {
 		Twitter.loaded++;
 
 		this.node.show();
+		
+		//console.log(Twitter.loaded, Twitter.tweets.length, Twitter.failed)
 		
 		if ( Twitter.autoStart && Twitter.loaded == (Twitter.tweets.length - Twitter.failed) ) {
 			Twitter.play();

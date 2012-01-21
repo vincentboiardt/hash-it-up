@@ -15,7 +15,7 @@ var Twitter = {
 			e.preventDefault();
 			
 			Twitter.autoStart = true;
-			Twitter.term = $('#term').val().replace('#', '');
+			Twitter.term = $('#term').val();//.replace('#', '');
 			
 			if ( Twitter.term.length > 0 )
 				Twitter.request();
@@ -29,7 +29,7 @@ var Twitter = {
 		//if ( ! Twitter.playlist || ( Twitter.playlist || Twitter.playlist.name != '#' + Twitter.term ) )
 			Twitter.playlist = new m.Playlist();
 		
-		$.getJSON( 'http://search.twitter.com/search.json', { q: Twitter.term + '+open.spotify.com', include_entities: 1, callback: '?' }, function(response){
+		$.getJSON( 'http://search.twitter.com/search.json', { q: encodeURI(Twitter.term) + '+open.spotify.com/track', include_entities: 1, callback: '?' }, function(response){
 			if ( response.results.length ) {
 				Twitter.tweets = response.results;
 				Twitter.render();
