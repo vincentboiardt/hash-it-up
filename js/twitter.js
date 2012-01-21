@@ -1,11 +1,21 @@
 var Twitter = {
 	init: function() {
 		Twitter.list = $('#list');
+		Twitter.term = 'protothon';
+		
 		Twitter.request();
-		Twitter.interval = setInterval( Twitter.request, 5000 );
+		
+		//Twitter.interval = setInterval( Twitter.request, 5000 );
+		
+		$('#form').submit(function(e){
+			e.preventDefault();
+			
+			Twitter.term = $('#term').val().replace('#', '');
+			Twitter.request();
+		});
 	},
 	request: function(){
-		$.getJSON( 'http://search.twitter.com/search.json', { q: 'protothon+open.spotify.com', include_entities: 1, callback: '?' }, function(response){
+		$.getJSON( 'http://search.twitter.com/search.json', { q: Twitter.term + '+open.spotify.com', include_entities: 1, callback: '?' }, function(response){
 			if ( response.results.length ) {
 				Twitter.tweets = response.results;
 				Twitter.render();
