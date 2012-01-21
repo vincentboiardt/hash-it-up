@@ -1,0 +1,17 @@
+{
+	"BundleType": "Application",
+	"AppIcon": {
+		"36x18": "tutorial.png"
+	},
+	"AppName": {
+		"en": "Spotwitdio"
+	},
+	"SupportedLanguages": [
+		"en"
+	],
+	"RequiredPermissions": [
+		"http://*.twimg.com",
+		"http://*.twitter.com",
+		"http://*.spotify.com"
+	]
+}

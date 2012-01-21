@@ -1,0 +1,97 @@
+.clear:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+.clear {
+display: inline-block;
+clear: both;
+}
+
+/* Hides from IE-mac \*/
+* html .clear {
+height: 1%;
+}
+
+.clear {
+display: block;
+}
+
+.image {
+}
+
+#wrap {
+	padding: 20px;
+}
+
+#list li {
+	color: #555;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+	padding: 10px;
+	margin: 0 0 10px;
+}
+
+.tweet-data {
+	margin: 0 0 10px;
+}
+
+.tweet-data .image {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin: 0 10px 0 0;
+}
+
+.tweet-data .name {
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.spotify-data {
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.spotify-data .image {
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin: 0 10px 0 0;
+}
+
+h1 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+}
+
+h1 a {
+	color: #333;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: bold;
+	color: #333;
+}
+
+h2 a {
+	color: #333;
+}
+
+h3 {
+	font-size: 16px;
+	color: #555;
+}
+
+h3 a {
+	color: #555;
+}
+

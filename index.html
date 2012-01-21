@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="sp://import/css/adam.css">
+<link rel="stylesheet" href="sp://import/css/api.css">
+<link rel="stylesheet" href="css/twitter.css">
+</head>
+
+<body>
+<div id="wrap">
+	<ul id="list"></ul>
+</div>
+<script>
+var sp = getSpotifyApi(1),
+	m = sp.require('sp://import/scripts/api/models'),
+	ui = sp.require('sp://import/scripts/ui');
+</script>
+<script src="js/libs/jquery-1.7.1.min.js"></script>
+<script src="js/libs/twitter-text.js"></script>
+<script src="js/twitter.js"></script>
+<script src="js/tweet.js"></script>
+<script>
+$(document).ready(function(){
+	Twitter.init();
+});
+</script>
+</body>
+</html>
