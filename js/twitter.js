@@ -15,7 +15,7 @@ var Twitter = {
 			e.preventDefault();
 			
 			Twitter.autoStart = true;
-			Twitter.term = $('#term').val().replace('#', '');
+			Twitter.term = $('#term').val();
 			
 			if ( Twitter.term.length > 0 )
 				Twitter.request();
