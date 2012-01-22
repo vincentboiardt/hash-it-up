@@ -63,13 +63,14 @@ Tweet.prototype = {
 					obj.show();
 				});
 			});
-		} else {
-			Twitter.failed++;
-		}
-		
+		}		
 	},
 	show: function(){
 		this.node.show();
+		if (Twitter.tracks.length > 0) {
+			Twitter.play();
+		}
+
 	},
 	appendTo: function(parent){
 		this.node.appendTo(parent);

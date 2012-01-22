@@ -105,9 +105,6 @@ var Twitter = {
 		if (Twitter.tweets.length > 0) {
 			Twitter.render();
 		}
-		if (Twitter.tracks.length > 0) {
-			Twitter.play();
-		}
 
 		if (Twitter.tracks.length == 0) {
 			$('#no-results').slideDown(200, function(){
