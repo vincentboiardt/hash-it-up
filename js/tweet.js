@@ -69,13 +69,7 @@ Tweet.prototype = {
 		
 	},
 	show: function(){
-		Twitter.loaded++;
-
 		this.node.show();
-		
-		if ( Twitter.autoStart && Twitter.loaded == (Twitter.tweets.length - Twitter.failed) ) {
-			Twitter.play();
-		}
 	},
 	appendTo: function(parent){
 		this.node.appendTo(parent);
