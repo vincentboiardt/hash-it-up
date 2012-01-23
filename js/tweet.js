@@ -63,21 +63,21 @@ Tweet.prototype = {
 					obj.show();
 				});
 			});
-		} else {
-			Twitter.failed++;
-		}
-		
+		}		
 	},
 	show: function(){
-		Twitter.loaded++;
-
 		this.node.show();
+<<<<<<< HEAD
 		
 		//console.log(Twitter.loaded, Twitter.tweets.length, Twitter.failed)
 		
 		if ( Twitter.autoStart && Twitter.loaded == (Twitter.tweets.length - Twitter.failed) ) {
+=======
+		if (Twitter.tracks.length > 0) {
+>>>>>>> origin/master
 			Twitter.play();
 		}
+
 	},
 	appendTo: function(parent){
 		this.node.appendTo(parent);
