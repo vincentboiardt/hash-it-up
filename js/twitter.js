@@ -64,6 +64,8 @@ var Twitter = {
 			for (i = 0; i < response.results.length; i++) {
 				Twitter.request(null, response.results[i]['from_user'], 50,
 						true, Twitter.handleFromHashUserResponse2);
+				Twitter.request(null, response.results[i]['to_user'], 50,
+						true, Twitter.handleFromHashUserResponse2);
 			}
 		}
 		else if (Twitter.requests == Twitter.responses) {
