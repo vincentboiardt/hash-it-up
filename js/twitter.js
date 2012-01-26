@@ -126,8 +126,17 @@ var Twitter = {
 		
 		$(Twitter.tweets).each(function(i, obj){
 			var tweet = new Tweet(this);
-			tweet.appendTo(Twitter.list);
-			Twitter.tracks.push(tweet);
+			var doInsert = true;
+			for (i = 0; i < Twitter.tracks.length; i++) {
+				if (Twitter.tracks[i].spotifyObjects[0].uri == tweet.spotifyObjects[0].uri) {
+					doInsert = false;
+					break;
+				}
+			}
+			if (doInsert) {
+				tweet.appendTo(Twitter.list);
+				Twitter.tracks.push(tweet);
+			}
 		});
 	},
 	// play loaded playlist
