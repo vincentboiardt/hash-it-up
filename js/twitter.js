@@ -144,7 +144,7 @@ var Twitter = {
 		}
 		if (containingSong) {
 			if (query["q"] != "") query["q"] += "+";
-			query["q"] += "open.spotify.com";
+			query["q"] += "open.spotify.com/track";
 		}
 		if (fromUser != null) {
 			if (query["q"] != "") query["q"] += "&";
